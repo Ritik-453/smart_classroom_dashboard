@@ -45,5 +45,5 @@ A modern Smart Classroom Automation Dashboard built using HTML, CSS, JavaScript,
 The dashboard contains a basic login authentication system.
 
 ```js
-Username: aman
-Password: aman.123
+Username: ritik
+Password: ritik.123
