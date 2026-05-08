@@ -30,6 +30,14 @@ A modern Smart Classroom Automation Dashboard built using HTML, CSS, JavaScript,
 
 ---
 
+## 🌐 Live Website
+
+Experience the Smart Classroom Automation Dashboard live here:
+
+🔗 https://ritik-453.github.io/smart_classroom_dashboard/
+
+---
+
 ## 🛠 Technologies Used
 
 - HTML5
