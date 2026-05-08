@@ -13,64 +13,72 @@
       margin:0;
       padding:0;
       box-sizing:border-box;
-      font-family:Arial,sans-serif;
+      font-family:'Segoe UI',sans-serif;
     }
 
     body{
-      background:#eef3f7;
+      background:#0f172a;
+      color:white;
+      overflow-x:hidden;
     }
 
-    /* LOGIN */
+    /* LOGIN PAGE */
 
     #loginPage{
       height:100vh;
       display:flex;
       justify-content:center;
       align-items:center;
-      background:linear-gradient(to right,#141e30,#243b55);
+      background:linear-gradient(135deg,#0f172a,#1e293b,#334155);
     }
 
     .login-box{
-      width:350px;
-      background:white;
-      padding:40px;
-      border-radius:15px;
+      width:320px;
+      padding:25px;
+      border-radius:18px;
+      background:rgba(255,255,255,0.08);
+      backdrop-filter:blur(12px);
+      border:1px solid rgba(255,255,255,0.1);
       text-align:center;
-      box-shadow:0 0 15px rgba(0,0,0,0.3);
     }
 
-    .login-box h2{
+    .login-box h1{
+      font-size:26px;
       margin-bottom:20px;
-      color:#243b55;
     }
 
     .login-box input{
       width:100%;
       padding:12px;
       margin:10px 0;
-      border-radius:8px;
-      border:1px solid #ccc;
-      font-size:16px;
+      border:none;
+      border-radius:10px;
+      background:rgba(255,255,255,0.12);
+      color:white;
+      outline:none;
+      font-size:14px;
+    }
+
+    .login-box input::placeholder{
+      color:#ddd;
     }
 
     .login-box button{
       width:100%;
       padding:12px;
-      background:#007bff;
-      color:white;
       border:none;
-      border-radius:8px;
-      font-size:18px;
+      border-radius:10px;
+      background:linear-gradient(135deg,#3b82f6,#06b6d4);
+      color:white;
+      font-size:15px;
       cursor:pointer;
-    }
-
-    .login-box button:hover{
-      background:#0056b3;
+      margin-top:10px;
     }
 
     #error{
-      color:red;
+      color:#ff6b6b;
       margin-top:10px;
+      font-size:13px;
     }
 
     /* DASHBOARD */
@@ -79,37 +87,48 @@
       display:none;
     }
 
+    /* SIDEBAR */
+
     .sidebar{
-      width:230px;
+      width:180px;
       height:100vh;
-      background:#1e293b;
-      color:white;
       position:fixed;
-      padding-top:20px;
+      background:#111827;
+      padding:15px;
+      border-right:1px solid rgba(255,255,255,0.08);
     }
 
-    .sidebar h2{
-      text-align:center;
-      margin-bottom:30px;
+    .logo{
+      font-size:22px;
+      font-weight:bold;
+      margin-bottom:25px;
+      color:#38bdf8;
     }
 
-    .sidebar ul{
+    .menu{
       list-style:none;
     }
 
-    .sidebar ul li{
-      padding:15px 25px;
-      border-bottom:1px solid rgba(255,255,255,0.1);
+    .menu li{
+      padding:10px;
+      margin-bottom:8px;
+      border-radius:10px;
       cursor:pointer;
+      transition:0.3s;
+      color:#cbd5e1;
+      font-size:14px;
     }
 
-    .sidebar ul li:hover{
-      background:#334155;
+    .menu li:hover{
+      background:#1e293b;
+      color:white;
     }
+
+    /* MAIN */
 
     .main{
-      margin-left:230px;
-      padding:20px;
+      margin-left:180px;
+      padding:18px;
     }
 
     .topbar{
@@ -119,65 +138,89 @@
       margin-bottom:20px;
     }
 
+    .topbar h1{
+      font-size:24px;
+    }
+
+    .status-badge{
+      background:#16a34a;
+      padding:7px 14px;
+      border-radius:20px;
+      font-size:12px;
+    }
+
+    /* CARDS */
+
     .cards{
       display:grid;
-      grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
-      gap:20px;
+      grid-template-columns:repeat(auto-fit,minmax(180px,1fr));
+      gap:15px;
     }
 
     .card{
-      background:white;
-      padding:20px;
-      border-radius:15px;
-      box-shadow:0 0 10px rgba(0,0,0,0.1);
+      background:rgba(255,255,255,0.06);
+      border:1px solid rgba(255,255,255,0.08);
+      border-radius:14px;
+      padding:15px;
+      backdrop-filter:blur(10px);
+      transition:0.3s;
+    }
+
+    .card:hover{
+      transform:translateY(-3px);
+    }
+
+    .icon{
+      font-size:20px;
+      margin-bottom:8px;
     }
 
     .card h3{
-      margin-bottom:10px;
-      color:#333;
+      color:#94a3b8;
+      font-size:14px;
+      margin-bottom:8px;
     }
 
     .value{
-      font-size:32px;
+      font-size:24px;
       font-weight:bold;
-      color:#007bff;
+      color:#38bdf8;
     }
 
-    .middle{
-      margin-top:25px;
+    /* GRID */
+
+    .grid{
+      margin-top:18px;
       display:grid;
       grid-template-columns:2fr 1fr;
-      gap:20px;
+      gap:15px;
     }
 
-    .graph-box,
-    .alert-box{
-      background:white;
-      padding:20px;
-      border-radius:15px;
-      box-shadow:0 0 10px rgba(0,0,0,0.1);
+    .glass{
+      background:rgba(255,255,255,0.06);
+      border-radius:14px;
+      padding:15px;
+      border:1px solid rgba(255,255,255,0.08);
+      backdrop-filter:blur(10px);
     }
+
+    .glass h2{
+      font-size:18px;
+      margin-bottom:12px;
+    }
+
+    /* ALERTS */
 
     .alert{
-      background:#f1f5f9;
-      padding:12px;
-      border-radius:10px;
+      padding:10px;
       margin-top:10px;
+      border-radius:10px;
+      background:#1e293b;
+      color:#e2e8f0;
+      font-size:13px;
     }
 
-    .bottom{
-      margin-top:25px;
-      display:grid;
-      grid-template-columns:1fr 1fr;
-      gap:20px;
-    }
-
-    .box{
-      background:white;
-      padding:20px;
-      border-radius:15px;
-      box-shadow:0 0 10px rgba(0,0,0,0.1);
-    }
+    /* TABLE */
 
     table{
       width:100%;
@@ -185,26 +228,63 @@
       margin-top:15px;
     }
 
-    table th,
+    table th{
+      background:#2563eb;
+      padding:10px;
+      color:white;
+      font-size:13px;
+    }
+
     table td{
-      border:1px solid #ddd;
       padding:10px;
       text-align:center;
+      border-bottom:1px solid rgba(255,255,255,0.08);
+      color:#e2e8f0;
+      font-size:13px;
     }
 
-    table th{
-      background:#007bff;
-      color:white;
-    }
+    /* STATUS */
 
-    .status{
+    .automation-box{
       text-align:center;
-      margin-top:40px;
+      padding-top:15px;
     }
 
-    .status h1{
-      color:#007bff;
-      font-size:40px;
+    .automation-box h1{
+      font-size:36px;
+      margin-bottom:10px;
+      color:#22c55e;
+    }
+
+    .automation-box p{
+      font-size:14px;
+      color:#cbd5e1;
+    }
+
+    /* GRAPH */
+
+    #myChart{
+      max-height:250px;
+    }
+
+    /* MOBILE */
+
+    @media(max-width:900px){
+
+      .sidebar{
+        width:100%;
+        height:auto;
+        position:relative;
+      }
+
+      .main{
+        margin-left:0;
+      }
+
+      .grid{
+        grid-template-columns:1fr;
+      }
+
     }
 
   </style>
@@ -219,13 +299,13 @@
 
   <div class="login-box">
 
-    <h2>🏫 Smart Classroom Login</h2>
+    <h1>🏫 Smart Classroom</h1>
 
-    <input type="text" id="username" placeholder="Enter Username">
+    <input type="text" id="username" placeholder="Username">
 
-    <input type="password" id="password" placeholder="Enter Password">
+    <input type="password" id="password" placeholder="Password">
 
-    <button onclick="login()">Login</button>
+    <button onclick="login()">Login Dashboard</button>
 
     <p id="error"></p>
 
@@ -241,16 +321,18 @@
 
   <div class="sidebar">
 
-    <h2>🏫 Classroom AI</h2>
+    <div class="logo">⚡ Classroom AI</div>
 
-    <ul>
-      <li>Dashboard</li>
-      <li>PIR Sensor</li>
-      <li>DHT11 Sensor</li>
-      <li>AC Automation</li>
-      <li>Analytics</li>
-      <li>Alerts</li>
-      <li onclick="logout()">Logout</li>
+    <ul class="menu">
+
+      <li>📊 Dashboard</li>
+      <li>🚶 PIR Motion</li>
+      <li>🌡 DHT11 Sensor</li>
+      <li>❄ AC Automation</li>
+      <li>📈 Analytics</li>
+      <li>🔔 Notifications</li>
+      <li onclick="logout()">🚪 Logout</li>
+
     </ul>
 
   </div>
@@ -261,79 +343,99 @@
 
     <div class="topbar">
 
-      <h1>Smart Classroom Automation System</h1>
+      <h1>Smart Classroom Automation</h1>
 
-      <h3>📡 Live Monitoring</h3>
+      <div class="status-badge">
+        🟢 LIVE SYSTEM ACTIVE
+      </div>
 
     </div>
 
-    <!-- TOP CARDS -->
+    <!-- CARDS -->
 
     <div class="cards">
 
       <div class="card">
-        <h3>PIR Motion Detection</h3>
+
+        <div class="icon">🚶</div>
+
+        <h3>PIR Motion</h3>
+
         <div class="value" id="motion">No Motion</div>
+
       </div>
 
       <div class="card">
+
+        <div class="icon">🌡</div>
+
         <h3>Temperature</h3>
+
         <div class="value" id="temperature">0°C</div>
+
       </div>
 
       <div class="card">
+
+        <div class="icon">💧</div>
+
         <h3>Humidity</h3>
+
         <div class="value" id="humidity">0%</div>
+
       </div>
 
       <div class="card">
+
+        <div class="icon">❄</div>
+
         <h3>AC Status</h3>
+
         <div class="value" id="acStatus">OFF</div>
+
       </div>
 
     </div>
 
     <!-- GRAPH + ALERT -->
 
-    <div class="middle">
+    <div class="grid">
 
-      <div class="graph-box">
+      <div class="glass">
 
-        <h2>Temperature & Humidity Graph</h2>
-
-        <br>
+        <h2>📈 Real-Time Analytics</h2>
 
         <canvas id="myChart"></canvas>
 
       </div>
 
-      <div class="alert-box">
+      <div class="glass">
 
-        <h2>Live Alerts</h2>
+        <h2>🔔 Smart Alerts</h2>
 
         <div class="alert" id="alert1">
-          🚶 No motion detected
+          🚶 No movement detected
         </div>
 
         <div class="alert" id="alert2">
-          ❄ AC is OFF
+          ❄ AC currently OFF
         </div>
 
         <div class="alert">
-          ✅ Classroom system active
+          ✅ Classroom monitoring active
         </div>
 
       </div>
 
     </div>
 
-    <!-- BOTTOM -->
+    <!-- TABLE + STATUS -->
 
-    <div class="bottom">
+    <div class="grid">
 
-      <div class="box">
+      <div class="glass">
 
-        <h2>Sensor Live Data</h2>
+        <h2>📋 Sensor Logs</h2>
 
         <table>
 
@@ -341,34 +443,26 @@
 
             <tr>
               <th>Motion</th>
-              <th>Temperature</th>
+              <th>Temp</th>
               <th>Humidity</th>
               <th>AC</th>
             </tr>
 
           </thead>
 
-          <tbody id="tableBody">
-
-          </tbody>
+          <tbody id="tableBody"></tbody>
 
         </table>
 
       </div>
 
-      <div class="box">
+      <div class="glass automation-box">
 
-        <h2>Automation Status</h2>
+        <h1 id="classStatus">🟢</h1>
 
-        <div class="status">
-
-          <h1 id="classStatus">🟢 ACTIVE</h1>
-
-          <br>
-
-          <p>Automatic classroom monitoring running.</p>
-
-        </div>
+        <p id="statusText">
+          Classroom Active
+        </p>
 
       </div>
 
@@ -388,7 +482,7 @@
 
     let pass = document.getElementById("password").value;
 
-    if(user === "aman" && pass === "aman.123"){
+    if(user === "ritik" && pass === "ritik.123"){
 
       document.getElementById("loginPage").style.display = "none";
 
@@ -419,7 +513,7 @@
 
   // CHART
 
-  const ctx = document.getElementById("myChart");
+  const ctx = document.getElementById('myChart');
 
   const chart = new Chart(ctx, {
 
@@ -434,13 +528,13 @@
         {
           label:'Temperature',
           data:[],
-          borderWidth:3
+          borderWidth:2
         },
 
         {
           label:'Humidity',
           data:[],
-          borderWidth:3
+          borderWidth:2
         }
 
       ]
@@ -467,19 +561,22 @@
 
   function updateData(){
 
-    // RANDOM SENSOR VALUES
+    let motion =
+    Math.random() > 0.5 ? "Detected" : "No Motion";
 
-    let motion = Math.random() > 0.5 ? "Detected" : "No Motion";
+    let temperature =
+    Math.floor(Math.random()*10)+24;
 
-    let temperature = Math.floor(Math.random()*10)+24;
+    let humidity =
+    Math.floor(Math.random()*30)+45;
 
-    let humidity = Math.floor(Math.random()*30)+45;
+    let ac =
+    temperature > 30 ? "ON" : "OFF";
 
-    let ac = temperature > 30 ? "ON" : "OFF";
+    // UPDATE VALUES
 
-    // UPDATE CARDS
-
-    document.getElementById("motion").innerHTML = motion;
+    document.getElementById("motion").innerHTML =
+    motion;
 
     document.getElementById("temperature").innerHTML =
     temperature + "°C";
@@ -487,7 +584,8 @@
     document.getElementById("humidity").innerHTML =
     humidity + "%";
 
-    document.getElementById("acStatus").innerHTML = ac;
+    document.getElementById("acStatus").innerHTML =
+    ac;
 
     // ALERTS
 
@@ -496,12 +594,24 @@
       document.getElementById("alert1").innerHTML =
       "🚶 Student movement detected";
 
+      document.getElementById("classStatus").innerHTML =
+      "🟢";
+
+      document.getElementById("statusText").innerHTML =
+      "Classroom Active";
+
     }
 
     else{
 
       document.getElementById("alert1").innerHTML =
-      "🚶 No motion detected";
+      "🚶 No movement detected";
+
+      document.getElementById("classStatus").innerHTML =
+      "🟡";
+
+      document.getElementById("statusText").innerHTML =
+      "Classroom Empty";
 
     }
 
@@ -515,27 +625,11 @@
     else{
 
       document.getElementById("alert2").innerHTML =
-      "❄ AC is OFF";
+      "❄ AC currently OFF";
 
     }
 
-    // STATUS
-
-    if(motion === "Detected"){
-
-      document.getElementById("classStatus").innerHTML =
-      "🟢 CLASS ACTIVE";
-
-    }
-
-    else{
-
-      document.getElementById("classStatus").innerHTML =
-      "🟡 CLASS EMPTY";
-
-    }
-
-    // TABLE UPDATE
+    // TABLE
 
     let row = `
       <tr>
@@ -549,7 +643,7 @@
     document.getElementById("tableBody").innerHTML =
     row + document.getElementById("tableBody").innerHTML;
 
-    // GRAPH UPDATE
+    // GRAPH
 
     chart.data.labels.push("T" + counter);
 
